@@ -1,3 +1,13 @@
+# Version 9.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Replace specifc composer repository with MET generic one
+
 # Version 8.0.1
 
 ## Bugfixes
