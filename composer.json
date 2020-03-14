@@ -28,15 +28,15 @@
         "psr-4": {
             "TechDivision\\Import\\Converter\\Ee\\": [
                 "src/",
-                "symfony/",
-                "tests/unit"
+                "symfony/"
             ]
         }
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.met.tdintern.de/"
+    "autoload-dev": {
+        "psr-4": {
+            "TechDivision\\Import\\Converter\\Ee\\": [
+                "tests/unit"
+            ]
         }
-    ]
+    }
 }
