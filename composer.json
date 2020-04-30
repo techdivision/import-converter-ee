@@ -1,12 +1,11 @@
 {
     "name": "techdivision/import-converter-ee",
-    "description": "Pacemaker library providing generic Magento 2 EE converter functionality",
+    "description": "M2IF library providing generic Magento 2 EE converter functionality",
     "license": "OSL-3.0",
     "require": {
         "php": ">=7.1.0",
-        "techdivision/import": "16.x-dev as 15.2.1",
-        "techdivision/import-ee": "15.x-dev as 14.0.1",
-        "techdivision/import-converter": "10.x-dev as 9.0.1"
+        "techdivision/import-ee": "14.*",
+        "techdivision/import-converter": "9.*"
     },
     "require-dev": {
         "doctrine/dbal": "2.5.*",
