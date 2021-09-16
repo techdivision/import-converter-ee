@@ -1,4 +1,4 @@
-name: techdivision/import
+name: techdivision/import-converter-ee
 
 on:
   push:
