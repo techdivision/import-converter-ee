@@ -2,68 +2,64 @@
 
 ## Zweck & Verantwortung
 
-Das `import-converter-ee` Modul bietet **EE-spezifische Converter-Funktionalität**. Es ist ein **Tier 5 Modul** und erweitert `import-converter`.
+EE-spezifischer Data Converter mit Staging-Support. **Tier 3 Modul** für EE Datenkonvertierung.
 
 **Hauptverantwortung:**
-- EE-spezifische Konvertierungs-Funktionalität
-- Staging Support für Konvertierungen
-- Sequence Management für EE
-- Observer Pattern für EE-Konvertierungs-Hooks
+- Data Processing und Konvertierung
+- Validation Framework
+- Error Handling
+- Service Layer Implementation
 
 ## Architektur & Design Patterns
 
 ### Kern-Klassen
-- **EeConverter**: EE-spezifischer Converter
-- **EeConverterObserver**: Observer für EE-Hooks
-- **StagingConverter**: Converter mit Staging-Support
+- **Repository**: Persistierungs-Layer
+- **Processor**: Service Layer
+- **Validator**: Validierungs-Framework
+- **Observer**: Lifecycle Hooks
 
 ### Verwendete Patterns
-- **Observer Pattern**: Für EE-Hooks
-- **Strategy Pattern**: Verschiedene EE-Konvertierungs-Strategien
+- **Observer Pattern**: Für Hooks
+- **Repository Pattern**: Datenschicht-Abstraktion
+- **Service Layer**: Business Logic
+- **Factory Pattern**: Object Creation
 
 ## Abhängigkeiten
 
-### Externe Pakete
-- **Keine**
-
-### TechDivision Dependencies
-- **import-ee** ^17.0.0 - EE Functionality
-- **import-converter** ^12.0.0 - Converter Framework
-
-### Abhängig von diesem Modul (1 Reverse Dependency)
-- **import-cli-simple** - Master CLI
+- **import-***: Verschiedene andere Importer je nach Modul
+- **Magento_Framework**: Core Framework
 
 ## Wichtige Entry Points
 
-### Converter Klassen
 ```php
-// EE Converter
-EeConverter::convert($row): array
-EeConverter::getSubject(): SubjectInterface
-
-// Converter Observer
-EeConverterObserver::handle($row): void
+// Repository::create()
+Repository::create($row): void
+Repository::find($id): Entity
 ```
 
 ## Events & Extension Points
 
-**Keine Events** - Tier 5 EE-Modul
+**Observer Hooks** für Lifecycle Integration
+
+## Database Schema
+
+Modul-spezifische Tabellen je nach Verwendung
 
 ## Hints für KI-Agenten
 
-### Wichtig zu verstehen
-1. **Tier 5 Modul**: Erweitert Converter Framework
-2. **EE-fokussiert**: Spezialisiert auf EE Features
-3. **Observer Pattern**: Für EE-Hooks
-4. **Staging Support**: Für EE Staging
+### Kritisches Verständnis
+1. **Daten-Oriented**: Fokus auf Data Processing
+2. **Converter/Serializer**: Transformieren Datenformate
+3. **Tier 1-4**: Unterschiedliche Abstraktions-Level
+4. **Repository Pattern**: Standard für Persistierung
 
-## Bekannte Einschränkungen
+## Known Limitations
 
-- **EE-Only**: Nur für Magento EE Deployments
-- **Staging-Abhängig**: Erfordert EE Staging-Funktionalität
+- Format-spezifisch: Abhängig von Input-Format
+- Validierungs-Regeln: Streng für Datenkonsistenz
 
 ## Zusammenfassung
 
-`import-converter-ee` ist ein **Tier 5 Modul**, das EE-spezifische Converter-Funktionalität bietet. Es erweitert den Converter Framework mit EE-Features.
+import-converter-ee: Spezialisiertes Import-Modul für Data Processing und Konvertierung.
 
-**Für Agenten:** Verstehe dieses Modul als **EE Converter** mit Observer Pattern und Staging Support.
+**Für Agenten:** Data Processing mit Repository und Service Layer Patterns.
